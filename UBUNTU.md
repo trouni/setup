@@ -268,13 +268,14 @@ Time to fork the repo and clone it on your laptop:
 ```bash
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
-git checkout --track origin/sublime
 ```
 
 Run the `dotfiles` installer.
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
+cd ~/code/$GITHUB_USERNAME/dotfiles
+git checkout --track origin/sublime
+zsh install.sh
 ```
 
 Check the emails registered with your GitHub Account. You'll need to pick one
