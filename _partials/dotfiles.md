@@ -24,6 +24,7 @@ Time to fork the repo and clone it on your laptop:
 ```bash
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
+git checkout --track origin/sublime
 ```
 
 Run the `dotfiles` installer.

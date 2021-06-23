@@ -8,6 +8,7 @@
 - 配置git和GitHub
 - 安装Ruby
 
+
 ## 远程工具
 
 为了能让我们不在一起的时候也能很好的沟通，我们将会使用以下两个工具：
@@ -82,6 +83,7 @@ Zoom是一个视频会议工具。想要创建账户并安装这个应用，你�
 
 </details>
 
+
 ## 一个有关在mac上跳出应用程序的小贴士
 
 在mac上点击应用程序窗口左上方的小红叉**并不是真正的退出了它**，他只是关闭了一个活跃窗口。如果想要 _真正_ 的退出应用程序，你需要在应用活跃的时候按`Cmd + Q`，或者在你的菜单栏里前往`APP_NAME` -> 点击`Quit`
@@ -141,6 +143,7 @@ xcode-select --install
 
 ![](images/github_upload_picture.png)
 
+
 ## Homebrew
 
 在Mac上，你需要安装[Homebrew](http://brew.sh/)，一个包管理工具。我们将在安装一些软件的时候用到它。
@@ -180,6 +183,7 @@ brew upgrade jq          || brew install jq
 brew upgrade openssl     || brew install openssl
 ```
 
+
 ## Sublime Text 3 - 你的文本编辑器
 
 一个文本编辑器是开发人员最重要的工具之一。前往[这个页面](http://www.sublimetext.com/3) 并下载OS X版本的**Sublime Text 3**。安装它（双击下载好的文件，拖动应用程序**放入到**`应用程序 Application`文件夹，**不要跳过这一步**）。如果你之前安装过Sublime Text 2，请先卸载它（把它拖动到垃圾桶）。
@@ -188,6 +192,7 @@ Sublime Text是免费且没时限的，但会在每十次储存之后跳出一�
 
 再一次，确保Sublime Text安装好了，而不是在你下载的磁盘镜像里。为了确保所有步骤执行正确，当Sublime Text安装完成后，
 卸载Finder左侧面板中的“ Sublime Text 3”磁盘。如果有什么出错的话，Finder会报错。这时可以询问一下老师。
+
 
 ## Oh-my-zsh - 美化你的终端
 
@@ -246,6 +251,7 @@ sh -c "$(curl -fsSL https://web-dev-challenge-lewagon-image.oss-cn-shanghai.aliy
 ``` bash
 echo 'export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"' >> ~/.zshrc
 ```
+
 
 ## GitHub
 
@@ -438,6 +444,7 @@ stt
 
 当这些结束之后，你可以关闭Sublime Text。
 
+
 ### SSH 密钥
 
 在一个终端窗口，启动这个命令：
@@ -496,6 +503,7 @@ brew install rbenv
 ```
 
 再一次，退出所有你的终端窗口并重启。
+
 
 现在，你已经准备好了去安装最新Ruby版本并把它设置为默认版本。
 
@@ -568,10 +576,11 @@ rm -rf ~/.gemrc
 
 **永远不要**使用`sudo gem install`来安装一个gem！即使你偶然发现了一个网络上的答案（或者终端提示）叫你这么做。
 
+
 ## Node (使用[nvm](https://github.com/nvm-sh/nvm))
 
 ```bash
-brew install nvm
+curl -o- https://web-dev-challenge-lewagon-image.oss-cn-shanghai.aliyuncs.com/setup/install_nvm.sh | zsh
 ```
 
 重启你的终端并执行下方指令：
@@ -596,6 +605,7 @@ node -v
 
 你应该会看到`v14.15.0`。如果没有的话，问一下你的老师。
 
+
 ## yarn
 
 让我们一起来安装[`yarn`](https://classic.yarnpkg.com/en/docs/install):
@@ -611,6 +621,7 @@ yarn -v
 ```
 
 你应该会看到你yarn的版本。如果没有的话，问一下你的老师。
+
 
 ## PostgreSQL
 
@@ -644,6 +655,7 @@ postgres=#
 你必须使用密码来保护你的电脑。如果你还没有设置过密码的话，请前往`>系统偏好设置>用户和组`并更改您的帐户密码。您还应该前往`>系统偏好设置>安全性>通用`。睡眠或屏幕保护程序启动的`5秒`后，您应该要求输入密码。
 
 您也可以前往` > 系统偏好设置 > 任务控制`，然后单击左下角的`Hot Corners`按钮。选择右下角以启动屏幕保护程序。这样，当您离开办公桌时，可以通过将鼠标置于右下角来快速锁定屏幕。5秒钟后，您的Macbook将被锁定，并要求输入密码以恢复。
+
 
 ## 最后检查
 
@@ -690,6 +702,7 @@ curl -Ls https://web-dev-challenge-lewagon-image.oss-cn-shanghai.aliyuncs.com/se
 
 ![](images/slack_mic_cam_all_green.png)
 
+
 ## 键盘
 
 当你成为了一名程序员的时候，你将明白离开键盘去操作将会耗费大量的时间，所以你将会想最大化的减少花费在触控盘和鼠标的时间。以下是一些在OSX上的小技巧可以帮助你做到这些：
@@ -717,34 +730,5 @@ defaults write com.apple.screencapture location "${HOME}/Desktop"
 
 # etc..
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
