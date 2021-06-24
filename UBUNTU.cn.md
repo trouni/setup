@@ -305,3 +305,220 @@ stt
 当这些结束之后，你可以关闭Sublime Text。
 
 
+rbenv_ubuntu.md
+
+
+现在，你已经准备好了去安装最新Ruby版本并把它设置为默认版本。
+
+运行下方这个指令，它会**花费一些时间（5-10分钟）**
+
+```bash
+rbenv install 2.6.6
+```
+
+当Ruby安装好后，运行下面这个指令来告诉系统使用2.6.6这个版本作为默认版本。
+
+```bash
+rbenv global 2.6.6
+```
+
+然后再次**重启**你的终端（关掉并重新打开它）。
+
+```bash
+ruby -v
+```
+
+你应该会看到`ruby 2.6.6p`。如果没有的话，询问一下老师。
+
+## 安装一些gems
+
+---
+
+<details>
+  <summary>点击这里，如果你在 :cn: <bold>中国</bold>的话</summary>
+
+
+  &nbsp;
+
+  :warning: 如果你在中国的话，你应该使用以下命令来安装gem。
+
+```bash
+# China only!
+gem sources --remove https://rubygems.org/
+gem sources -a https://gems.ruby-china.com/
+gem sources -l
+# *** CURRENT SOURCES ***
+# https://gems.ruby-china.com/
+# Ruby-china.com must be in the list now
+```
+</details>
+
+---
+
+无论你是不是在中国，请都运行下面的指令：
+
+```bash
+gem install rake bundler rspec rubocop rubocop-performance pry pry-byebug colored http
+```
+
+如果你遇到了以下的报错：
+
+`
+ERROR: While executing gem ... (TypeError)
+incompatible marshal file format (can't be read)
+format version 4.8 required; 60.33 given
+`
+
+运行以下的指令：
+
+```bash
+rm -rf ~/.gemrc
+```
+
+然后，重新运行安装gems的指令。
+
+**永远不要**使用`sudo gem install`来安装一个gem！即使你偶然发现了一个网络上的答案（或者终端提示）叫你这么做。
+
+
+## Node (使用[nvm](https://github.com/nvm-sh/nvm))
+
+```bash
+curl -o- https://web-dev-challenge-lewagon-image.oss-cn-shanghai.aliyuncs.com/setup/install_nvm.sh | zsh
+```
+
+重启你的终端并执行下方指令：
+
+```bash
+nvm -v
+```
+
+你应该会看到你的nvm的版本。如果没有的话，问一下你的老师。
+
+现在，让我们来安装node：
+
+```bash
+nvm install 14.15.0
+```
+
+当这个指令执行结束之后，运行：
+
+```bash
+node -v
+```
+
+你应该会看到`v14.15.0`。如果没有的话，问一下你的老师。
+
+
+## yarn
+
+让我们一起来安装[`yarn`](https://classic.yarnpkg.com/en/docs/install):
+
+```bash
+npm install --global yarn
+```
+
+重启终端并运行：
+
+```bash
+yarn -v
+```
+
+你应该会看到你yarn的版本。如果没有的话，问一下你的老师。
+
+
+## PostgreSQL
+
+In a few weeks, we'll talk about SQL and Databases and you'll need something called PostgreSQL,
+an open-source robust and production-ready database. Let's install it now.
+
+```
+sudo apt install -y postgresql postgresql-contrib libpq-dev build-essential
+sudo -u postgres psql --command "CREATE ROLE `whoami` LOGIN createdb;"
+```
+
+
+## Ubuntu inotify
+
+Ubuntu is always tracking changes in your folders and to do this it uses inotify.
+By default the Ubuntu limit is set to 8192 files monitored.
+
+As programming involves a lot of files, we need to raise this limit.
+In your terminal run:
+
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
+
+## Extra
+
+### Install video codec H264
+
+On our pedagogical platform (Kitt, you'll soon discover it!), we have some videos. By default Firefox on Linux cannot play them as they use an unsupported codec (H264). To get those videos working for you, you need to run this:
+
+```bash
+sudo apt install libavcodec-extra -y
+```
+
+### Install useful terminal tools
+
+`tree` is a nice tool to visualize a directory tree inside the terminal:
+
+`ncdu` is a text-based interface disk utility.
+
+`htop` is an interactive process viewer.
+
+`tig` is a text-mode interface for `git`.
+
+```bash
+sudo apt install tree ncdu htop tig
+```
+
+
+## 最后检查
+
+让我们来看看你是否已经成功安装好了所有软件。
+
+退出所有的终端，打开一个新的终端窗口并运行下方指令：
+
+```bash
+curl -Ls https://web-dev-challenge-lewagon-image.oss-cn-shanghai.aliyuncs.com/setup/check.rb > _.rb && ruby _.rb || rm _.rb
+```
+
+它应该会告诉你，你的工作台是否已经正确的设置好了 ：）如果没有的话，问一下你的老师。
+
+
+## 校友
+:warning: 如果你已经收到了一封来自Le Wagon邀请你去注册Kitt(我们的学习平台)的邮件并且你也注册完成了的话，你可以安全的跳过这一章节。如果你还没有注册完成的话，请跟随邮件里的教程，完成注册。
+
+如果你不确定你要做什么，可以查看[这个链接](https://kitt.lewagon.com/)。如果你已经登录了的话，你可以跳过这个章节。如果你没有登录的话，你需要点击`Enter Kitt as a Student`。如果你可以成功的登录，你也可以安全的跳过这一步。不然的话，你可以询问一下老师你是否有收到过相关的邮件，或者直接跟着执行下面的教程。
+
+前往[kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding)，注册成为Le Wagon的一名校友。选择你的batch，用gitHub账户登录并填写你的信息。
+
+你的老师将会验证你的确属于这个batch。你可以在完成了注册表单后去询问老师去做验证。
+
+当你的老师验证成功后，请前往你的邮箱收件箱。你应该会有两封邮件：
+
+- 一封来自Slack,邀请你加入Le Wagon Alumni Slack社群（在这儿你可以与你的伙伴和所有之前的学员交流）。点击**Join**并填写相应的个人信息。
+
+- 一封来自GitHub,要求你加入`lewagon`团队。**接受它**，不然的话你将没有办法看到有关讲座和课程的文件。
+
+
+## Slack
+
+[Install Slack for Linux (beta)](https://get.slack.help/hc/en-us/articles/212924728-Slack-for-Linux-beta-).
+
+Launch the app and sign in to `lewagon-alumni` organization.
+
+Make sure you upload a picture there.
+
+You can also sign in to Slack on your iPhone or Android device!
+
+The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
+
+In case of remote tickets, you will use Slack audio or video call to get help. To ensure that everything is working fine, launch the Slack app on your Laptop, then [follow this procedure](https://slack.com/intl/en-gb/help/articles/115003538426-Troubleshoot-Slack-Calls#run-our-calls-test) (tl;dr type `/call --test` then the `Enter` key in any channel).
+
+After the test are finished, you should have green "All clear" messages at least for your microphone and camera. If not, ask a teacher.
+![](images/slack_mic_cam_all_green.png)
+
+

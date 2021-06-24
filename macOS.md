@@ -415,7 +415,9 @@ gh repo fork lewagon/dotfiles --clone
 Run the `dotfiles` installer.
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
+cd ~/code/$GITHUB_USERNAME/dotfiles
+git checkout --track origin/sublime
+zsh install.sh
 ```
 
 Check the emails registered with your GitHub Account. You'll need to pick one
