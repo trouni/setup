@@ -80,11 +80,10 @@ filenames = {
 
 ["", "cn"].each do |locale|
   filenames.each do |filename, partials|
-    filename = locale.blank? ? filename : filename.split(".md").join("#{locale}.")
-    option = locale
-    File.open(filename.to_s, 'w:utf-8') do |f|
+    filename = "#{filename.split('.md').first}.#{locale}.md" unless locale.empty?
+    File.open(filename, 'w:utf-8') do |f|
       partials.each do |partial|
-        folder = locale.blank? ? "_partials" : "_partials/#{locale}"
+        folder = locale.empty? ? "_partials" : "_partials/#{locale}"
         f << File.read(File.join(folder, "#{partial}.md"), encoding: "utf-8").gsub("<RUBY_VERSION>", SETUP_RUBY_VERSION)
         f << "\n\n"
       end

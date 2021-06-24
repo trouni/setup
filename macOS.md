@@ -359,7 +359,7 @@ You will get the following output:
 - Press Enter to open github.com in your browser...
 ```
 
-Select and copy the code (`0EF9-D015` in the example), then type `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, type `Enter` again, and that should be it :tada:
+Select and copy the code (`0EF9-D015` in the example), then press `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, press `Enter` again, and that should be it :tada:
 
 To check that you are properly connected, type:
 
@@ -475,7 +475,7 @@ sw_vers
   <summary>Click here if your OS version (ProductVersion line) is less than 10.12</summary>
 
   In order not to re-type your SSH passphrase at every `git push`, you can add these lines to the `~/.ssh/config` file:
-
+  
   First open the `~/.ssh/config` file.
 
   ```bash
@@ -680,7 +680,7 @@ Let's check if you successfully installed everything.
 Quit all opened Terminal, open a new one and run the following commands:
 
 ```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/setup/master/check.rb > _.rb && ruby _.rb || rm _.rb
+curl -Ls https://raw.githubusercontent.com/lewagon/setup/sublime/check.rb > _.rb && ruby _.rb || rm _.rb
 ```
 
 It should tell you if your workstation is ready :) If not, ask a teacher.
